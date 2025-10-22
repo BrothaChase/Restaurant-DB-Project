@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Restaurant Dashboard</title>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+  <header>
+    <h1>🍽 Restaurant Dashboard </h1>
+  </header>
+  <div class="actions">
+    <button id="refreshAll">Refresh All</button>
+    <span id="status" class="mono"></span>
+  </div>
+
+  <div class="grid">
+    <div class="team-overview">Team Overview</div>
+
+    <section class="card">
+      <div class="team-subtitle">Servers</div>
+      <table id="serverTable">
+        <thead><tr><th>serverid</th><th>name</th><th>contactinfo</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </section>
+
+    <section class="card">
+      <div class="team-subtitle">Chefs</div>
+      <div class="row">
+        <input id="chefName" placeholder="Name"/>
+        <input id="chefStation" placeholder="Station (Grill, Pastry, ...)"/>
+        <button id="addChef">Add Chef</button>
+      </div>
+      <table id="chefTable">
+        <thead><tr><th>chefid</th><th>name</th><th>station</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </section>
+
+    <section class="card">
+      <h2>Entrees</h2>
+      <div class="row">
+        <select id="entreeName">
+        </select>
+        <input id="entreePrice" type="number" step="0.01" placeholder="Price"/>
+        <input id="entreeChefId" type="number" placeholder="Chef ID"/>
+        <button id="addEntree">Add Entree</button>
+      </div>
+      <table id="entreeTable">
+        <thead><tr><th>entreeid</th><th>name</th><th>price</th><th>chefid</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </section>
+
+    <section class="card">
+      <h2>Dining Tables</h2>
+      <table id="tableTable">
+        <thead><tr><th>tableid</th><th>number</th><th>seats</th><th>status</th><th>serverid</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </section>
+
+    <section class="card">
+      <h2>Hosts</h2>
+      <table id="hostTable">
+        <thead><tr><th>hostid</th><th>name</th><th>contactinfo</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </section>
+
+    <section class="card">
+      <h2>Guest Parties</h2>
+      <table id="guestTable">
+        <thead><tr><th>partyid</th><th>guestcount</th><th>arrivedat</th><th>assignedtableid</th><th>seatedbyhostid</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </section>
+
+    <section class="card">
+      <h2>Receipts</h2>
+      <table id="receiptTable">
+        <thead><tr><th>receiptid</th><th>tableid</th><th>partyid</th><th>serverid</th><th>issuedat</th><th>totalamount</th><th>paymentstatus</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </section>
+
+    <section class="card">
+      <h2>Receipt ↔ Entree</h2>
+      <table id="reTable">
+        <thead><tr><th>receiptentid</th><th>receiptid</th><th>entreeid</th><th>quantity</th><th>priceatorder</th><th>status</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </section>
+  </div>
+ <script src="script.js"></script>
+</body>
+</html>

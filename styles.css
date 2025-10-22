@@ -1,0 +1,95 @@
+body { 
+      font-family: system-ui, Arial; 
+      margin: 32px; 
+      background-color: #fff8e1; /* light gold background */
+      color: #000;
+    }
+    h1 { 
+      margin: 0; 
+      color: #d4af37; /* gold text */
+      font-weight: 700;
+      font-size: 2rem;
+    }
+    header {
+      background-color: #000; /* black background bar */
+      padding: 16px 32px;
+      margin: 0 -32px 32px -32px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.5);
+    }
+    .grid { 
+      display: grid; 
+      gap: 32px; /* increased spacing between sections */
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+    }
+    .card { 
+      background-color: #fff; /* white cards */
+      border-radius: 16px; 
+      padding: 24px; /* increased padding */
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1); /* subtle drop shadow */
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      margin-bottom: 16px;
+    }
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+    table { 
+      width: 100%; 
+      border-collapse: collapse; 
+      margin-top: 12px;
+    }
+    th, td { 
+      padding: 12px 8px; /* increased padding */
+      border-bottom: 1px solid #eee; 
+      text-align: left; 
+      font-size: 14px; 
+    }
+    .row { 
+      display: flex; 
+      gap: 12px; /* increased gap */
+      flex-wrap: wrap; 
+      margin-bottom: 16px;
+    }
+    input, select, button { 
+      padding: 10px 12px; /* increased padding */
+      font-size: 14px; 
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-family: inherit;
+    }
+    button {
+      background-color: #d4af37; /* gold button background */
+      color: #000;
+      border: none;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #b38e1b;
+    }
+    .actions {
+      margin: 16px 0 32px 0; /* increased margin */
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .mono { 
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; 
+      color: #555;
+    }
+    .team-overview {
+      grid-column: 1 / -1;
+      margin-bottom: 16px;
+      color: #d4af37;
+      font-weight: 700;
+      font-size: 1.5rem;
+      border-bottom: 2px solid #d4af37;
+      padding-bottom: 8px;
+    }
+    .team-subtitle {
+      color: #b38e1b;
+      font-weight: 600;
+      font-size: 1.1rem;
+      margin-bottom: 12px;
+    }
