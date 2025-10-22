@@ -20,6 +20,11 @@ body {
       display: grid; 
       gap: 32px; /* increased spacing between sections */
       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+      max-width: 1280px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 24px;
+      box-sizing: border-box;
     }
     .card { 
       background-color: #fff; /* white cards */
@@ -27,22 +32,41 @@ body {
       padding: 24px; /* increased padding */
       box-shadow: 0 2px 6px rgba(0,0,0,0.1); /* subtle drop shadow */
       transition: transform 0.2s ease, box-shadow 0.2s ease;
-      margin-bottom: 16px;
+      margin-bottom: 0;
+      box-sizing: border-box;
+      min-width: 0;
+      /* Prevent card overflow */
+      word-break: break-word;
     }
     .card:hover {
       transform: translateY(-6px);
       box-shadow: 0 8px 20px rgba(0,0,0,0.15);
     }
+    /* Wrap tables in a container to enable horizontal scrolling on smaller screens */
+    .table-wrapper {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
     table { 
       width: 100%; 
       border-collapse: collapse; 
       margin-top: 12px;
+      table-layout: fixed;
+      min-width: 600px; /* Ensure minimum width for horizontal scroll on small screens */
+    }
+    thead tr {
+      background-color: #f5f5f5; /* subtle background for header row */
     }
     th, td { 
-      padding: 12px 8px; /* increased padding */
+      padding: 12px 16px; /* increased horizontal padding for spacing */
       border-bottom: 1px solid #eee; 
       text-align: left; 
       font-size: 14px; 
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      word-break: keep-all;
+      max-width: 200px;
     }
     .row { 
       display: flex; 
@@ -92,4 +116,30 @@ body {
       font-weight: 600;
       font-size: 1.1rem;
       margin-bottom: 12px;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      table {
+        min-width: 600px;
+      }
+    }
+    nav.topbar {
+      background:#111;
+      margin: -16px -32px 24px -32px;
+      padding: 10px 32px;
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      border-bottom: 1px solid #222;
+    }
+    nav.topbar a {
+      color:#d4af37;
+      text-decoration:none;
+      padding:8px 10px;
+      border-radius:6px;
+      font-weight:600;
+    }
+    nav.topbar a:hover {
+      background:#1b1b1b;
     }
